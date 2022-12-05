@@ -14,31 +14,43 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.btnAdd.setOnClickListener {
-            var firstNum = binding.edFirstNum.text.toString()
-            var calc = firstNum.toDouble()
-            var secondNum = binding.edSecondNum.text.toString()
-            var calc2 = secondNum.toDouble()
-            var adding = calc + calc2
-            binding.txtResult.text=getString(R.string.add, adding)
-
+            adding()
         }
         binding.btnRem.setOnClickListener {
-            var firstNum = binding.edFirstNum.text.toString()
-            var calc = firstNum.toDouble()
-            var secondNum = binding.edSecondNum.text.toString()
-            var calc2 = secondNum.toDouble()
-            var removeing = calc - calc2
-            binding.txtResult.text=getString(R.string.add,removeing)
-
+            removing()
         }
         binding.btnDivide.setOnClickListener {
-            var firstNum = binding.edFirstNum.text.toString()
-            var calc = firstNum.toDouble()
-            var secondNum = binding.edSecondNum.text.toString()
-            var calc2 = secondNum.toDouble()
-            var dividing = calc / calc2
-            binding.txtResult.text=getString(R.string.add, dividing)
-
+            dividing()
         }
+    }
+
+    private fun dividing() {
+        var firstNum = binding.edFirstNum.text.toString()
+        var calc = firstNum.toDouble()
+        var secondNum = binding.edSecondNum.text.toString()
+        var calc2 = secondNum.toDouble()
+        var dividing = calc / calc2
+        var dividing1 = dividing.toString()
+        binding.txtResult.text=getString(R.string.add, dividing1)
+    }
+
+    private fun removing() {
+        var firstNum = binding.edFirstNum.text.toString()
+        var calc = firstNum.toDouble()
+        var secondNum = binding.edSecondNum.text.toString()
+        var calc2 = secondNum.toDouble()
+        var removing = calc - calc2
+        var removing1 =removing.toString()
+        binding.txtResult.text=getString(R.string.add,removing1)
+    }
+
+    private fun adding() {
+        var firstNum = binding.edFirstNum.text.toString()
+        var calc = firstNum.toDouble()
+        var secondNum = binding.edSecondNum.text.toString()
+        var calc2 = secondNum.toDouble()
+        var adding = calc + calc2
+        var adding1 = adding.toString()
+        binding.txtResult.text=getString(R.string.add, adding1)
     }
 }
